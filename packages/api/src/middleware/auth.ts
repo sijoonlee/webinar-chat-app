@@ -22,10 +22,12 @@ export const middlewareAuth: RequestHandler = (req, res, next) => {
 
   const token = reg.exec(bearer)![1];
   try {
+    // decrypt jwt, and store on express response
     res.locals.user = jwt.verify(token, JWT_SECRET);
   } catch (e) {
     return throwError('Invalid JWT');
   }
 
   next();
+  return;
 };

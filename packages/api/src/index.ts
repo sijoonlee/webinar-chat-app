@@ -10,11 +10,14 @@ import { messagesRouter } from './routes/messages';
 import { authRouter } from './routes/auth';
 import { middlewareAuth } from './middleware/auth';
 import { meRouter } from './routes/me';
+import { createServer } from 'http';
+import io from 'socket.io';
+import setIo from './lib/sockets';
 
 const run = async () => {
   // Created an INSTANCE of an API
   const app = express();
-
+  const server = createServer(app);
   /**
    * Each middleware takes 3 parameters
    * 1. Request
@@ -47,9 +50,18 @@ const run = async () => {
   app.use('/conversations', middlewareAuth, conversationsRouter);
   app.use('/messages', middlewareAuth, messagesRouter);
 
+  // Initialize socket.io
+  const ioServer = io(server);
+  setIo(ioServer);
+
   // Running the web server on port 9999
-  app.listen(9999);
-  console.log('API running on http://localhost:9999');
+  // app.listen(9999);
+
+  const port = process.env.PORT || 9999;
+
+  server.listen(port, () => {
+    console.log(`API running on http://localhost:${port}`);
+  });
 };
 
 run();

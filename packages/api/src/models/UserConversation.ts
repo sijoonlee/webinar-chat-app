@@ -1,5 +1,5 @@
 // https://www.npmjs.com/package/sequelize-typescript#many-to-many
-import { Column, ForeignKey, Model, Table } from 'sequelize-typescript';
+import { Column, DataType, ForeignKey, Model, Table } from 'sequelize-typescript';
 
 import { Conversation } from './Conversation';
 import { User } from './User';
@@ -8,10 +8,10 @@ import { User } from './User';
 export class UserConversation extends Model<UserConversation> {
 
   @ForeignKey(() => User)
-  @Column
-  userId: number;
+  @Column(DataType.UUID)
+  userId: string;
 
   @ForeignKey(() => Conversation)
-  @Column
-  conversationId: number;
+  @Column(DataType.UUID)
+  conversationId: string;
 }
