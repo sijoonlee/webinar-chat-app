@@ -1,0 +1,72 @@
+main.conversation header {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 300px;
+  right: 0;
+  height: 80px;
+  background: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  color: var(--color-main);
+  font-weight: bold;
+}
+
+main.conversation header.create input {
+  min-width: 200px;
+}
+
+main.conversation header.create button {
+  background: transparent;
+  border: none;
+  color: var(--color-main);
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+main.conversation ul.messages {
+  position: fixed;
+  top: 80px;
+  left: 300px;
+  bottom: 60px;
+  right: 0;
+  padding: 20px;
+  background: var(--color-main-soft);
+}
+
+main.conversation ul.messages li {
+  min-height: 30px;
+  margin-bottom: 5px;
+}
+
+main.conversation ul.messages li span {
+  background-color: var(--color-main);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+
+main.conversation footer {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 300px;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  padding: 10px;
+  background-color: white;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+main.conversation footer form, main.conversation footer input {
+  width: 100%;
+}
+/*# sourceMappingURL=conversation.page.css.map */

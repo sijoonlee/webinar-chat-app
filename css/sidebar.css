@@ -1,0 +1,45 @@
+aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  background: white;
+  border-right: 1px solid #eee;
+}
+
+aside div, aside ul a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 20px;
+  border-bottom: 1px solid #eee;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside ul a:hover {
+  background-color: #f0f0f0;
+}
+
+aside div {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+aside a.button {
+  border-radius: 50%;
+  background-color: var(--color-main);
+  color: white;
+  border: none;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  font-size: 30px;
+  text-align: center;
+}
+/*# sourceMappingURL=sidebar.css.map */
