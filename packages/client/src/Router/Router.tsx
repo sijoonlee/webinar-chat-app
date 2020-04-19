@@ -18,8 +18,12 @@ export const AppRouter = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if (!token) setLoading(false);
-    else loadMe();
+    if (!token){
+      setLoading(false);
+    } else {
+      console.log("loadMe called");
+      loadMe();
+    }
   }, []);
 
   if (loading) return <span>Loading...</span>;
